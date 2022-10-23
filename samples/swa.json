@@ -1,0 +1,40 @@
+{
+    "switching":{
+    "vlan":{
+        "10":{
+            "name":"Admin"
+            
+             },
+        "20":{
+            "name":"Accounts"
+            
+             },
+        "30":{
+            "name":"HR"
+           
+            },
+        "40":{
+            "name":"Voice"
+            },
+        "99":
+        {"name":"Management",
+        "svi":"true",
+        "ip4addr":"192.168.99.252 255.255.255.0"
+        
+        },
+        "100":{
+            "name":"Native",
+            "trunk":{
+                "interfaces":["g 0/1"],
+                "switchport_mode":"trunk",
+                "nonegotiate":"true"
+            },
+            
+            "dtp":{
+                "interfaces":["g 0/2"],
+                "switchport_mode":"dynamic d"
+            }
+        }
+}
+}
+}

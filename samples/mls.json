@@ -1,0 +1,43 @@
+{
+    "switching":
+    {
+        "mls":{
+            "ipv4_use":"true",
+            "ipv6_use":"true",
+            "g0/2":{
+                "ip4addr":"209.165.200.225 255.255.255.252",
+                "ip6addr":"2001:db8:acad:a::1/64"
+            }
+        },
+        "vlan":{
+            "10":{
+                "name":"Staff",
+                "svi":"true",
+                "ip4addr":"192.168.10.254 255.255.255.0",
+                "ip6addr":"2001:db8:acad:10::1/64"
+            },
+            "20":{
+                "name":"Student",
+                "svi":"true",
+                "ip4addr":"192.168.20.254 255.255.255.0",
+                "ip6addr":"2001:db8:acad:20::1/64"
+            },
+            "30":{
+                "name":"Faculty",
+                "svi":"true",
+                "ip4addr":"192.168.30.254 255.255.255.0",
+                "ip6addr":"2001:db8:acad:30::1/64"
+            },
+            "99":{
+                "name":"Native",
+                "svi":"true",
+                "ip4addr":"192.168.99.254 255.255.255.0",
+                "trunk":{
+                    "switchport_mode":"trunk",
+                    "interfaces":["g 0/1"]
+                }
+            }
+
+        }
+    }
+}

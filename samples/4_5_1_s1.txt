@@ -1,0 +1,42 @@
+enable
+conf
+
+hostname S1
+end
+conf
+
+ip default-gateway 172.17.99.1
+end
+conf
+
+vlan 10
+name Faculty/Staff
+int range fa 0/11-7
+switchport mode access
+switchport access vlan 10
+vlan 20
+name Students
+int range fa 0/18-24
+switchport mode access
+switchport access vlan 20
+vlan 30
+name Guest(Default)
+int range fa 0/6-10
+switchport mode access
+switchport access vlan 30
+vlan 88
+name Native
+int range g 0/1
+switchport mode trunk
+switchport trunk native vlan 88
+switchport trunk allowed vlan 10,20,30,88,99
+vlan 99
+name Management
+int vlan 99
+ip address 172.17.99.10 255.255.255.0
+no shut
+int range vlan 99
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,30,88,99
+end

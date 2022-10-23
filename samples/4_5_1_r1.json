@@ -1,0 +1,36 @@
+{
+    "routing":{
+        "hostname":"R1",
+        "interfaces":{
+            "g0/0":{
+                "ip4addr":"172.17.25.2 255.255.255.252"
+               
+                },
+                "g0/1":{
+                    "subif":{
+                        "10":{
+                            "ip4addr":"172.17.10.1 255.255.255.0",
+                            "encapsulation":"dot1q"
+                        },
+                        "20":{
+                            "ip4addr":"172.17.20.1 255.255.255.0",
+                            "encapsulation":"dot1q"
+                        },
+                        "30":{
+                            "ip4addr":"172.17.30.1 255.255.255.0",
+                            "encapsulation":"dot1q"
+                        },
+                        "88":{
+                            "ip4addr":"172.17.88.1 255.255.255.0",
+                            "encapsulation":"dot1q",
+                            "native":"true"
+                        },
+                        "99":{
+                            "ip4addr":"172.17.99.1 255.255.255.0",
+                            "encapsulation":"dot1q"
+                        }
+                }
+            }
+            }
+    }
+}

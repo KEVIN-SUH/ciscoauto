@@ -1,0 +1,41 @@
+{
+    "switching":{
+        "hostname":"abc",
+        "vlan":{
+            "10":{
+                "name":"Admin",
+                "interfaces": ["fa 0/1","fa 0/4"],
+                "switchport_mode":"access"
+                 },
+            "20":{
+                "name":"Accounts",
+                "interfaces":["fa 0/2"],
+                "switchport_mode":"access"
+                 },
+            "30":{
+                "name":"HR",
+                "interfaces":["fa 0/3"],
+                "switchport_mode":"access"
+                },
+            "40":{
+                "name":"Voice",
+                "voice":"true",
+                "interfaces":["fa 0/4"]
+
+                },
+            "99":
+            {"name":"Management",
+            "svi":"true",
+                "ip4addr":"192.168.99.254 255.255.255.0"
+            },
+            "100":{
+                "name":"Native",
+                "trunk":{
+
+                    "interfaces":["g 0/2"],
+                    "switchport_mode":"trunk"
+                }
+            }
+        }
+    }
+}

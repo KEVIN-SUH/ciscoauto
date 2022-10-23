@@ -1,0 +1,10 @@
+conf spanning-tree vlan 1 root primary ##bid 랑상관없이 우선순위 정하기 
+int fa switchport_mode #configure.....
+int fa spanning-tree postfast
+int fa spanning-tree bpduguard enable
+ip route ${주소범위}  ${보낼 주소}  ##ex 192.16.2.0 255.255.255.0 10.0.0.1
+#정적 라우팅
+
+S2(config)#user Admin1 password Admin1pa55
+line vty 0 15
+login local
